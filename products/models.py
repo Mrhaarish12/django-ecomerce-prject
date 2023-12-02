@@ -5,11 +5,13 @@ from base.models import BaseModel
 
 class Category(BaseModel):
     category_name = models.CharField(max_length=100)
+    slug = models.SlugField()
     category_image = models.ImageField(upload="categories")
 
 
 class Product(BaseModel):
     product_name = models.CharField(max_length=100)
+    slug = models.SlugField()
     category = models.ForiegnKey(Category, on_delete=models.CASCADE, related_name="category")
     price = models.IntegerField()
     product_description = models.TextField()
