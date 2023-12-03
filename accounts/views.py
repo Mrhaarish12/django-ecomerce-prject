@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -15,4 +16,8 @@ def register_page(request):
         password = request.POST.get('password')
         
         user_obj = User.objects.filter(username=email)
+
+        if user_obj.exists():
+            messages.warning(request, 'Email is already taken')
+            return HttpResponseRedirect(request.path_info)
     return render(request, 'accounts/register.html')
