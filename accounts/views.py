@@ -1,10 +1,34 @@
+from django.contrib.auth import authenticate , login , logout
 from django.http import HttpResponseRedirect
+from cmath import log
+from tkinter import E
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth.models import User
 # Create your views here.
 
 def  login_page(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user_obj = User.objects.filter(username = email)
+
+        if not user_obj.exists():
+            messages.warning(request, 'Account not found.')
+            return HttpResponseRedirect(request.path_info)
+
+
+        if not user_obj[0].profile.is_email_verified:
+            messages.warning(request, 'Your account is not verified.')
+            return HttpResponseRedirect(request.path_info)
+
+        user_obj = _Authenticator(username = email , password= password)
+        if user_obj:
+            login(request , user_obj)
+            return redirect('/')
+
+        
+
     return render(request, 'accounts/login.html')
 
 
