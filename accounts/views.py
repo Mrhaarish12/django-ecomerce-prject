@@ -26,4 +26,6 @@ def register_page(request):
         user_obj.save()
 
         messages.warning(request, 'An email has been sent on your mail.')
+        return HttpResponseRedirect(request.path_info)
+
     return render(request, 'accounts/register.html')
