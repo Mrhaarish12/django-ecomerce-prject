@@ -22,12 +22,13 @@ def  login_page(request):
             messages.warning(request, 'Your account is not verified.')
             return HttpResponseRedirect(request.path_info)
 
-        user_obj = _Authenticator(username = email , password= password)
+        user_obj = authenticate(username = email , password= password)
         if user_obj:
             login(request , user_obj)
             return redirect('/')
 
-        
+        messages.warning(request, 'Invalid credentials')
+        return HttpResponseRedirect(request.path_info)
 
     return render(request, 'accounts/login.html')
 
