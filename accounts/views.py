@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from django.contrib import messages
+from django.contrib.auth.models import User
 # Create your views here.
 
 def  login_page(request):
@@ -12,5 +13,6 @@ def register_page(request):
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
         password = request.POST.get('password')
-        pass
+        
+        user_obj = User.objects.filter(username=email)
     return render(request, 'accounts/register.html')
