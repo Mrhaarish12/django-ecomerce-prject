@@ -1,10 +1,12 @@
 from django.contrib.auth import authenticate , login , logout
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from cmath import log
 from tkinter import E
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth.models import User
+
+from accounts.models import Profile
 # Create your views here.
 
 def  login_page(request):
