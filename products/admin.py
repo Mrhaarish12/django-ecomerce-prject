@@ -4,12 +4,13 @@ from django.contrib import admin
 from .models import *
 
 admin.site.register(Category)
-admin.site.register(Product)
 
 class ProductImageAdmin(admin.StackedInline):
     models = ProductImage
 
-class Product(admin.ModelAdmin):
+class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductImageAdmin]
-    
+
+
+admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductImage)
