@@ -10,6 +10,10 @@ class Category(BaseModel):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
+        super(Category, self).save(*args, **kwargs)
+
+    def __Str__(self) -> str:
+        return
 
 class Product(BaseModel):
     product_name = models.CharField(max_length=100)
