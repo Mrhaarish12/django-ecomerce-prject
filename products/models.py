@@ -9,7 +9,7 @@ class Category(BaseModel):
     category_image = models.ImageField(upload_to="categories")
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.product_name)
         super(Category, self).save(*args, **kwargs)
 
     def __str__(self) -> str:
