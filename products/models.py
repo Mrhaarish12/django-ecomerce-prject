@@ -18,10 +18,10 @@ class Product(BaseModel):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.product_name)
-        super(Category, self).save(*args, **kwargs)
+        super(Product, self).save(*args, **kwargs)
 
     def __str__(self) -> str:
-        return self.category_name
+        return self.product_name
 
 
 class ProductImage(BaseModel):
