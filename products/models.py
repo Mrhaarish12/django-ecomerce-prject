@@ -9,7 +9,7 @@ class Category(BaseModel):
     category_image = models.ImageField(upload_to="categories")
 
     def save(self, *args, **kwargs):
-        pass
+        self.slug = slugify(self.title)
 
 class Product(BaseModel):
     product_name = models.CharField(max_length=100)
