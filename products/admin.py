@@ -8,5 +8,8 @@ admin.site.register(Product)
 
 class ProductImageAdmin(admin.StackedInline):
     models = ProductImage
+
+class Product(admin.ModelAdmin):
+    inlines = [ProductImageAdmin]
     
 admin.site.register(ProductImage)
