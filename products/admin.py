@@ -11,6 +11,8 @@ class ProductImageAdmin(admin.StackedInline):
 class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductImageAdmin]
 
+class ColorVariantAdmin(admin.ModelAdmin):
+    model = ColorVariant
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductImage)
