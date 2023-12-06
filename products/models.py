@@ -12,7 +12,7 @@ class Category(BaseModel):
         return
     
     def __str__(self) -> str:
-        return super().__str__()
+        return self.category_name
 
 class Product(BaseModel):
     product_name = models.CharField(max_length=100)
