@@ -9,12 +9,13 @@ class ProductImageAdmin(admin.StackedInline):
     models = ProductImage
 
 class ProductAdmin(admin.ModelAdmin):
+    list_display = ['productr_name']
     inlines = [ProductImageAdmin]
 
 @admin.register(ColorVariant)
 class ColorVariantAdmin(admin.ModelAdmin):
     model = ColorVariant
-    
+
 @admin.register(SizeVariant)
 class SizeVariantAdmin(admin.ModelAdmin):
     model = SizeVariant    
