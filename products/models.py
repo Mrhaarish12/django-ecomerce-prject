@@ -28,6 +28,7 @@ class Product(BaseModel):
     price = models.IntegerField()
     product_description = models.TextField()
     color_variant = models.ManyToManyField(ColorVariant)
+    size_variant = models.ManyToManyField(SizeVariant)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.product_name)
