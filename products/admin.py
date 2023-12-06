@@ -14,5 +14,8 @@ class ProductAdmin(admin.ModelAdmin):
 class ColorVariantAdmin(admin.ModelAdmin):
     model = ColorVariant
 
+class SizeVariantAdmin(admin.ModelAdmin):
+    model = SizeVariant    
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductImage)
