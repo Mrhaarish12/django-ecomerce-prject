@@ -8,6 +8,11 @@ class Category(BaseModel):
     slug = models.SlugField(unique=True, null=True, blank=True)
     category_image = models.ImageField(upload_to="categories")
 
+    def save(self, *args, **kwargs):
+        return
+    
+    def __str__(self) -> str:
+        return super().__str__()
 
 class Product(BaseModel):
     product_name = models.CharField(max_length=100)
