@@ -14,7 +14,8 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(ColorVariant)
 class ColorVariantAdmin(admin.ModelAdmin):
     model = ColorVariant
-
+    
+@admin.register(SizeVariant)
 class SizeVariantAdmin(admin.ModelAdmin):
     model = SizeVariant    
 
