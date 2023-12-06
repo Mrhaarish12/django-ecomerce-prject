@@ -21,6 +21,8 @@ class ColorVariant(BaseException):
 
 class SizeVariant(BaseModel):
     size_name = models.CharField(max_length=100)
+    price = models.IntegerField(default=0)
+
 
 class Product(BaseModel):
     product_name = models.CharField(max_length=100)
