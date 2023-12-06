@@ -19,6 +19,7 @@ class ColorVariantAdmin(admin.ModelAdmin):
 
 @admin.register(SizeVariant)
 class SizeVariantAdmin(admin.ModelAdmin):
+    list_display = ['size', 'price']
     model = SizeVariant    
 
 admin.site.register(Product, ProductAdmin)
