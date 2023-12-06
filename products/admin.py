@@ -9,7 +9,7 @@ class ProductImageAdmin(admin.StackedInline):
     models = ProductImage
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['productr_name']
+    list_display = ['product_name', 'price']
     inlines = [ProductImageAdmin]
 
 @admin.register(ColorVariant)
