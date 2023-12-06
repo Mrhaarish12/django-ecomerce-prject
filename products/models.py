@@ -10,7 +10,7 @@ class Category(BaseModel):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.category_name)
-        return
+        super(Category, self).save(*args, **kwargs)
     
     def __str__(self) -> str:
         return self.category_name
