@@ -18,6 +18,9 @@ class Category(BaseModel):
 class ColorVariant(BaseException):
     color_name = models.CharField(max_length=100)
 
+class SizeVariant(BaseModel):
+    size_name = models.CharField(max_length=100)
+
 class Product(BaseModel):
     product_name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, null=True, blank=True)
