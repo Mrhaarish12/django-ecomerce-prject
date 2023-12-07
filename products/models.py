@@ -27,7 +27,7 @@ class SizeVariant(BaseModel):
     price = models.IntegerField(default=0)
 
     def __str__(self) -> str:
-        return
+        return self.size_name
 
 
 class Product(BaseModel):
