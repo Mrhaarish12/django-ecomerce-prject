@@ -7,7 +7,7 @@ def get_products(request, slug):
         product = Product.objects.get(slug=slug)
 
         if request.GET.get('size'):
-            return
+            size = request.GET.get('size')
         return render(request, 'product/products.html', context={'product': product})
     except Exception as e:
         print(e)
