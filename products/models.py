@@ -46,6 +46,8 @@ class Product(BaseModel):
     def __str__(self) -> str:
         return self.product_name
 
+    def get_product_price_by_size(self):
+        return
 
 class ProductImage(BaseModel):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_images")
