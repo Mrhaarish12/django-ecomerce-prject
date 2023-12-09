@@ -91,7 +91,7 @@
                       {% for size in product.size_variant.all %}
                       
                         <label class="custom-control custom-radio custom-control-inline">
-                          <input type="radio" name="select_size"{% if selected_size == size.size_name%} checked="" class="custom-control-input" onchange="get_correct_price('{{size.size_name}}')">
+                          <input type="radio" name="select_size"{% if selected_size == size.size_name %} checked="" {% endif %} class="custom-control-input" onchange="get_correct_price('{{size.size_name}}')">
                           <div class="custom-control-label">{{size.size_name}}</div>
                         </label>
     
