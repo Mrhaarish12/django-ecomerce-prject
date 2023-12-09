@@ -14,6 +14,8 @@ class Profile(BaseModel):
     email_token = models.CharField(max_length=100, null=True, blank=True)
     profile_image = models.ImageField(upload_to="profile")
 
+    def get_card_count(self):
+        return
 
 @receiver(post_save , sender = User)
 def  send_email_token(sender , instance , created , **kwargs):
