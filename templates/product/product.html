@@ -45,7 +45,8 @@
     </div> <!-- rating-wrap.// -->
     <div class="mb-3">
       <var class="price h4">$
-        {%  %}
+        {% if upated_price %}
+        {{product.price}}
 
       </var>
     </div>
