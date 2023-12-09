@@ -55,4 +55,4 @@ class ProductImage(BaseModel):
 
 
 class Coupon(BaseModel):
-    return
+    counpon_code = models.CharField(max_length=10)
