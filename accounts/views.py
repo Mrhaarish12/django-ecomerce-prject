@@ -104,6 +104,9 @@ def cart(request):
             messages.warning(request, 'Coupon already exists')
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+        cart_obj.coupon = coupon_obj
+        cart_obj.save()
+
     context = {'cart':cart_obj}
     return render(request, 'accounts/cart.html', context)
         
