@@ -75,4 +75,7 @@ def add_to_cart(request, uid):
     cart , _ = Cart.objects.get_or_create(user=user, is_paid = False)
 
     cart_item = CartItems.objects.create(cart=cart, product=product)
+
+    if variant:
+        variant = request.GET.get('variant')
     return
