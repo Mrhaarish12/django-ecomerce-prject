@@ -97,8 +97,9 @@ def cart(request):
         coupon = request.POST.get('coupon')
         coupon_obj = Coupon.objects.filter(coupon_code__icontains = coupon)
         if not coupon_obj.exists():
-                messages.warning(request, 'Coupon is not valid')
+                messages.warning(request, 'Invalid Coupon. ')
                 return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+    context = {'cart':cart_obj}
     return render(request, 'accounts/cart.html', context)
         
