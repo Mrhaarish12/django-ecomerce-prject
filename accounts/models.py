@@ -18,6 +18,10 @@ class Profile(BaseModel):
         return CartItems.objects.filter(cart__is_paid = False, cart__user = self.user_).count
 
 
+class Cart(BaseModel):
+    return sum(price)
+
+
 
 @receiver(post_save , sender = User)
 def  send_email_token(sender , instance , created , **kwargs):
