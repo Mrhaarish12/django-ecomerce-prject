@@ -80,4 +80,5 @@ def add_to_cart(request, uid):
         variant = request.GET.get('variant')
         size_variant = SizeVariant.objects.get(size_name=variant)
         cart_item.size_variant = size_variant
-    return
+        cart_item.save()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
