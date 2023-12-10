@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 
 from accounts.models import Profile
+from products.models import Product
 # Create your views here.
 
 def  login_page(request):
@@ -69,4 +70,5 @@ def activate_email(request, email_token):
     
 def add_to_cart(request, uid):
     variant = request.GET.get('variant')
+    product = Product.objects.get(id=uid)
     return
