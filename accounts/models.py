@@ -24,6 +24,7 @@ class Cart(BaseModel):
 
     def get_cart_total(self):
         cart_items = self.cart_items.all()
+        price = []
     return sum(price)
 
 
