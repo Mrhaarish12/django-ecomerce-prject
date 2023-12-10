@@ -123,5 +123,6 @@ def cart(request):
     return render(request, 'accounts/cart.html', context)
         
 
-def remove_coupon(request):
-    return
+def remove_coupon(request, cart_id):
+    cart = Cart.objects.get(uid=cart_id)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
