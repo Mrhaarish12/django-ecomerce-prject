@@ -82,3 +82,7 @@ def add_to_cart(request, uid):
         cart_item.size_variant = size_variant
         cart_item.save()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def remove_cart(request, cart_item_uid):
+    try:
+        
