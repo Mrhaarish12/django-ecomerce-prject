@@ -66,3 +66,6 @@ def activate_email(request, email_token):
         return redirect('/')
     except Exception as e:
         return HttpResponse('Invalid Email Token')
+    
+def add_to_cart(request, uid):
+    return
