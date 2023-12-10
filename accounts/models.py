@@ -15,7 +15,9 @@ class Profile(BaseModel):
     profile_image = models.ImageField(upload_to="profile")
 
     def get_card_count(self):
-        return CartItems.objects.filter(cart__is_paid = False)
+        return CartItems.objects.filter(cart__is_paid = False, cart__user = self.user_).count
+
+
 
 @receiver(post_save , sender = User)
 def  send_email_token(sender , instance , created , **kwargs):
