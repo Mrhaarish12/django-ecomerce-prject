@@ -106,6 +106,8 @@ def cart(request):
 
         cart_obj.coupon = coupon_obj
         cart_obj.save()
+        messages.warning(request, 'Coupon applied successfully')
+
 
     context = {'cart':cart_obj}
     return render(request, 'accounts/cart.html', context)
