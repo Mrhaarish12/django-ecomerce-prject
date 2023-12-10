@@ -68,4 +68,5 @@ def activate_email(request, email_token):
         return HttpResponse('Invalid Email Token')
     
 def add_to_cart(request, uid):
+    variant = request.GET.get('variant')
     return
