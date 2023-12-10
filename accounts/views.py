@@ -71,4 +71,5 @@ def activate_email(request, email_token):
 def add_to_cart(request, uid):
     variant = request.GET.get('variant')
     product = Product.objects.get(id=uid)
+    user = request.user
     return
