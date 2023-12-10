@@ -19,6 +19,7 @@ class Profile(BaseModel):
 
 
 class Cart(BaseModel):
+    user = models.ForeignKey(User, on_delete=models.CASCADe, related_name='carts')
     return sum(price)
 
 
