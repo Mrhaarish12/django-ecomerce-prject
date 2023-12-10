@@ -92,7 +92,7 @@ def remove_cart(request, cart_item_uid):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 def cart(request):
-    context = {'cart': Cart.objects.get(is_paid=False, user=request.user)}
+    cart_obj = Cart.objects.get(is_paid=False, user=request.user)
     if request.method == 'POST':
         coupon = request.POST.get('coupon')
         coupon_obj = Coupon.objects.filter(coupon_code__icontains = coupon)
