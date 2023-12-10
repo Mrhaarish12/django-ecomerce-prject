@@ -30,6 +30,7 @@ class Cart(BaseModel):
             if cart_item.color_variant:
                 color_variant_price = cart_item.color_variant.price
                 price.append(color_variant_price)
+            if cart_item.size_variant:
     return sum(price)
 
 
