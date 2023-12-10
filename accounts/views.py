@@ -90,4 +90,7 @@ def remove_cart(request, cart_item_uid):
     except Exception as e:
         print(e)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def cart(request):
+    return
         
