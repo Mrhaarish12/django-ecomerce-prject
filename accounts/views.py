@@ -109,7 +109,7 @@ def cart(request):
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
         if cart_obj.is_expired:
-            messages.warning(request, f'Amount should be greater than {coupon_obj.minimum_amount}')
+            messages.warning(request, f'coupon expired')
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
