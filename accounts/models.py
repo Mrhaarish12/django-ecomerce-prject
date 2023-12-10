@@ -37,7 +37,7 @@ class Cart(BaseModel):
                 price.append(size_variant_price)
 
         if self.coupon:
-            return sum(price)
+            return sum(price) - coupon.discount_price
 
         return sum(price)
 

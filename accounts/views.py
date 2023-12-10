@@ -104,6 +104,9 @@ def cart(request):
             messages.warning(request, 'Coupon already exists')
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+        if cart_obj.get_cart_total() > coupon_obj.minimum_amount:
+            pass
+
         cart_obj.coupon = coupon_obj
         cart_obj.save()
         messages.warning(request, 'Coupon applied successfully')
