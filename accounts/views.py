@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 
 from accounts.models import Cart, Profile
-from products.models import Product, SizeVariant
+from products.models import Coupon, Product, SizeVariant
 # Create your views here.
 
 def  login_page(request):
@@ -95,6 +95,6 @@ def cart(request):
     context = {'cart': Cart.objects.get(is_paid=False, user=request.user)}
     if request.method == 'POST':
         coupon = request.POST.get('coupon')
-        coupon_obj = Coupon.objects.filter()
+        coupon_obj = Coupon.objects.filter(coupon_code__icontains = coupon)
     return render(request, 'accounts/cart.html', context)
         
