@@ -21,6 +21,9 @@ class Profile(BaseModel):
 class Cart(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADe, related_name='carts')
     is_paid = models.BooleanField(default=False)
+
+    def get_cart_total(self):
+        pass
     return sum(price)
 
 
