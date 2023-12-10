@@ -125,4 +125,5 @@ def cart(request):
 
 def remove_coupon(request, cart_id):
     cart = Cart.objects.get(uid=cart_id)
+    messages.success(request, 'Coupon Removed.')
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
