@@ -5,6 +5,7 @@ from django.dispatch import receiver
 from base.models import BaseModel
 from django.db.models.signals import post_save
 from base.emails import send_account_activation_email
+from products.models import Coupon
 
 # Create your models here.
 
@@ -20,6 +21,7 @@ class Profile(BaseModel):
 
 class Cart(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADe, related_name='carts')
+    coupon = models.ForeignKey(Coupon, on_delete=models.SET_NULL, null=True, blank=True)
     is_paid = models.BooleanField(default=False)
 
     def get_cart_total(self):
