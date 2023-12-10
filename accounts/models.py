@@ -28,7 +28,7 @@ class Cart(BaseModel):
         for cart_item in cart_items:
             price.append(cart_item.product.price)
             if cart_item.color_variant:
-                pass
+                color_variant_price = cart_item.color_variant.price
     return sum(price)
 
 
