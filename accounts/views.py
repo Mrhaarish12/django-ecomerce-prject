@@ -122,3 +122,6 @@ def cart(request):
     context = {'cart':cart_obj}
     return render(request, 'accounts/cart.html', context)
         
+
+def remove_coupon(request):
+    return
