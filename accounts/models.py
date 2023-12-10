@@ -27,6 +27,8 @@ class Cart(BaseModel):
         price = []
         for cart_item in cart_items:
             price.append(cart_item.product.price)
+            if cart_item.color_variant:
+                pass
     return sum(price)
 
 
