@@ -105,7 +105,7 @@ def cart(request):
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
         if cart_obj.get_cart_total() > coupon_obj.minimum_amount:
-            messages.warning(request, 'Amount should be greater than 500')
+            messages.warning(request, f'Amount should be greater than {coupon_obj.minimum_amount}')
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
