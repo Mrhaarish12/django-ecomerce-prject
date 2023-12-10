@@ -85,4 +85,8 @@ def add_to_cart(request, uid):
 
 def remove_cart(request, cart_item_uid):
     try:
+        pass
+    except Exception as e:
+        print(e)
+    return
         
