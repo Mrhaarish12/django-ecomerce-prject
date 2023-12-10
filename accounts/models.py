@@ -23,7 +23,7 @@ class Cart(BaseModel):
     is_paid = models.BooleanField(default=False)
 
     def get_cart_total(self):
-        pass
+        cart_items = self.cart_items.all()
     return sum(price)
 
 
