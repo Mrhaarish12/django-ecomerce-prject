@@ -73,4 +73,6 @@ def add_to_cart(request, uid):
     product = Product.objects.get(id=uid)
     user = request.user
     cart , _ = Cart.objects.get_or_create(user=user, is_paid = False)
+
+    cart_item = CartItems.objects.create(cart=cart, product=product)
     return
