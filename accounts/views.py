@@ -93,5 +93,7 @@ def remove_cart(request, cart_item_uid):
 
 def cart(request):
     context = {'cart': Cart.objects.get(is_paid=False, user=request.user)}
-    return rener(request, 'accounts/cart.html', context)
+    if request.messages == 'POST':
+        pass
+    return render(request, 'accounts/cart.html', context)
         
