@@ -85,7 +85,7 @@ def add_to_cart(request, uid):
 
 def remove_cart(request, cart_item_uid):
     try:
-        pass
+        cart_item = CartItems.objects.get(uid=cart_item_uid)
     except Exception as e:
         print(e)
     return
