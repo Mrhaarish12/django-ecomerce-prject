@@ -95,5 +95,6 @@ def cart(request):
     context = {'cart': Cart.objects.get(is_paid=False, user=request.user)}
     if request.method == 'POST':
         coupon = request.POST.get('coupon')
+        coupon_obj = Coupon.objects.filter()
     return render(request, 'accounts/cart.html', context)
         
