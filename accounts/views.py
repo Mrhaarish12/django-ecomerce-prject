@@ -6,7 +6,7 @@ from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth.models import User
 
-from accounts.models import Profile
+from accounts.models import Cart, Profile
 from products.models import Product
 # Create your views here.
 
@@ -72,4 +72,5 @@ def add_to_cart(request, uid):
     variant = request.GET.get('variant')
     product = Product.objects.get(id=uid)
     user = request.user
+    cart , _ = Cart.objects.get_or_create(user=user, is_paid = False)
     return
