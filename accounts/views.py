@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 
 from accounts.models import Cart, Profile
-from products.models import Product
+from products.models import Product, SizeVariant
 # Create your views here.
 
 def  login_page(request):
@@ -78,4 +78,5 @@ def add_to_cart(request, uid):
 
     if variant:
         variant = request.GET.get('variant')
+        size_variant = SizeVariant.objects.get(size_name=variant)
     return
