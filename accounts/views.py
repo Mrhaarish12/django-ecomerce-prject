@@ -96,5 +96,6 @@ def cart(request):
     if request.method == 'POST':
         coupon = request.POST.get('coupon')
         coupon_obj = Coupon.objects.filter(coupon_code__icontains = coupon)
+        if not coupon_obj.exists():
     return render(request, 'accounts/cart.html', context)
         
