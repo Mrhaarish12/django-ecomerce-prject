@@ -26,6 +26,7 @@ class Cart(BaseModel):
         cart_items = self.cart_items.all()
         price = []
         for cart_item in cart_items:
+            price.append(cart_item.product.price)
     return sum(price)
 
 
