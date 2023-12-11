@@ -38,7 +38,7 @@ class Cart(BaseModel):
 
         if self.coupon:
             if self.coupon.minimum_amount > sum(price)
-            return sum(price) - self.coupon.discount_price
+                return sum(price) - self.coupon.discount_price
 
         return sum(price)
 
