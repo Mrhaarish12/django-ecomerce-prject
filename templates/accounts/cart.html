@@ -30,6 +30,7 @@ var options = {
 var rzp1 = new Razporpay(options)
 rzp1.on('payment failed', function(response){
     alert(response.error.code);
+    alert(response.error.description);
 });
 
 </script>
