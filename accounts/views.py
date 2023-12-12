@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 
 from accounts.models import Cart, Profile
 from products.models import Coupon, Product, SizeVariant
+import razorpay
 # Create your views here.
 
 def  login_page(request):
