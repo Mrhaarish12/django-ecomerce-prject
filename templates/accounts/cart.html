@@ -37,7 +37,9 @@ rzp1.on('payment failed', function(response){
     alert(response.error.metadata.order_id);
     alert(response.error.metadata.payment_id);
 });
-document.getElementById('rzp-button1'.onclick)
+document.getElementById('rzp-button1').onclick = function(e){
+    
+}
 
 </script>
 {% end block %}
