@@ -146,4 +146,4 @@ EMAIL_HOST_PASSWORD = ''
 
 
 razor_pay_key_id = ''
-key_secret = ''
+SECRET_KEY = ''

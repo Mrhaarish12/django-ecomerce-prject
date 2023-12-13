@@ -126,7 +126,7 @@ def cart(request):
     context = {'cart':cart_obj, 'payment': payment}
     return render(request, 'accounts/cart.html', context)
     print('************************************')
-    print(payement)
+    print(payment)
     print('************************************')
 
 def remove_coupon(request, cart_id):
