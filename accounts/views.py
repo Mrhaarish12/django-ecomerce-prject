@@ -92,6 +92,7 @@ def remove_cart(request, cart_item_uid):
         print(e)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+from django.conf import settings
 def cart(request):
     cart_obj = Cart.objects.get(is_paid=False, user=request.user)
     if request.method == 'POST':
