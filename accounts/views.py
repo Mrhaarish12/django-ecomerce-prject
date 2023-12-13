@@ -95,7 +95,7 @@ def remove_cart(request, cart_item_uid):
 def cart(request):
     cart_obj = Cart.objects.get(is_paid=False, user=request.user)
     if request.method == 'POST':
-        client = razorpay.Client()
+        client = razorpay.Client(auth = (''))
         coupon = request.POST.get('coupon')
         coupon_obj = Coupon.objects.filter(coupon_code__icontains = coupon)
         if not coupon_obj.exists():
