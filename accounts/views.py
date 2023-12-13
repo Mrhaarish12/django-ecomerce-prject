@@ -120,7 +120,7 @@ def cart(request):
         messages.warning(request, 'Coupon applied successfully')
     return render(request, 'accounts/cart.html', context)
 
-    client = razorpay.Client(auth = (settings.razor_pay_key_id, settings.key_secret))
+    client = razorpay.Client(auth = (settings.razor_pay_key_id, settings.SECRET_KEY))
     payment = client.order.create({'amount':cart_obj.get_cart_total(), 'currency':'INR', 'payment':payment})
 
     context = {'cart':cart_obj, 'payment': payment}
