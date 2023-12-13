@@ -96,7 +96,7 @@ from django.conf import settings
 def cart(request):
     cart_obj = Cart.objects.get(is_paid=False, user=request.user)
     if request.method == 'POST':
-        client = razorpay.Client(auth = (''))
+        client = razorpay.Client(auth = (settings.razor_pay_key_id))
         coupon = request.POST.get('coupon')
         coupon_obj = Coupon.objects.filter(coupon_code__icontains = coupon)
         if not coupon_obj.exists():
