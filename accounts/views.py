@@ -123,7 +123,7 @@ def cart(request):
     client = razorpay.Client(auth = (settings.razor_pay_key_id, settings.key_secret))
     payment = client.order.create({'amount':cart_obj})
 
-    context = {'cart':cart_obj}
+    context = {'cart':cart_obj.get_cart_total(),}
     return render(request, 'accounts/cart.html', context)
         
 
