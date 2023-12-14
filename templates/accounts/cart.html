@@ -12,7 +12,7 @@ var options = {
     "order_id": "{{payment.id}}",
     "handler": function (response){
 
-        window.location.href = `http://127.0.0.1:8000/accounts/success/?razorpay_payment_id=${result}`;
+        window.location.href = `http://127.0.0.1:8000/accounts/success/?razorpay_payment_id=${response.razorpay_payment_id}`;
         alert(response.razorpay_payment_id);
         alert(response.razorpay_order_id);
         alert(response.razorpay_signature)
