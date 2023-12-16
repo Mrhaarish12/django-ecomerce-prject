@@ -141,5 +141,5 @@ def remove_coupon(request, cart_id):
 
 
 def success(request):
-    order_id = request.GET.get()
+    order_id = request.GET.get('order_id')
     return
