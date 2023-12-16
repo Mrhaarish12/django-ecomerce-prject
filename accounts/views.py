@@ -126,16 +126,17 @@ def cart(request):
         return render(request, 'accounts/cart.html', context)
 
     if cart_obj:
-    client = razorpay.Client(auth = (settings.razor_pay_key_id, settings.SECRET_KEY))
-    payment = client.order.create({'amount':cart_obj.get_cart_total()*100, 'currency':'INR', 'payment':payment})
+        client = razorpay.Client(auth = (settings.razor_pay_key_id, settings.SECRET_KEY))
+        payment = client.order.create({'amount':cart_obj.get_cart_total()*100, 'currency':'INR', 'payment':payment})
+        cart_obj.razor_pay_order_id=payment['id']
+        cart_obj.save()
+        print('************************************')
+        print(payment)
+        print('************************************')
 
     context = {'cart':cart_obj, 'payment': payment}
     return render(request, 'accounts/cart.html', context)
-    cart_obj.razor_pay_order_id=payment['id']
-    cart_obj.save()
-    print('************************************')
-    print(payment)
-    print('************************************')
+    
 
 def remove_coupon(request, cart_id):
     cart = Cart.objects.get(uid=cart_id)
