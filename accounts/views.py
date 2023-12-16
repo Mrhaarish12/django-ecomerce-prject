@@ -143,3 +143,4 @@ def remove_coupon(request, cart_id):
 def success(request):
     order_id = request.GET.get('order_id')
     cart = Cart.objects.get(razor_pay_order_id=order_id)
+    cart.is_paid = True
