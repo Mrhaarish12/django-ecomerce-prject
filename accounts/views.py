@@ -96,10 +96,9 @@ from django.conf import settings
 def cart(request):
     cart_obj=None
     try:
-        pass
+        cart_obj = Cart.objects.get(is_paid=False, user=request.user)
     except Exception as e:
         print(e)
-    cart_obj = Cart.objects.get(is_paid=False, user=request.user)
     if request.method == 'POST':
         coupon = request.POST.get('coupon')
         coupon_obj = Coupon.objects.filter(coupon_code__icontains = coupon)
