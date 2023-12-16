@@ -1,6 +1,6 @@
 
 from django.urls import path
-from accounts.views import cart, login_page,register_page,activate_email
+from accounts.views import add_to_cart, cart, login_page,register_page,activate_email
 
 
 urlpatterns = [
