@@ -134,6 +134,7 @@ def cart(request):
         print(payment)
         print('************************************')
 
+    payment=None
     context = {'cart':cart_obj, 'payment': payment}
     return render(request, 'accounts/cart.html', context)
     
