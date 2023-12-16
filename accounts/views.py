@@ -94,6 +94,9 @@ def remove_cart(request, cart_item_uid):
 
 from django.conf import settings
 def cart(request):
+    try:
+        pass
+    except Exception as 
     cart_obj = Cart.objects.get(is_paid=False, user=request.user)
     if request.method == 'POST':
         coupon = request.POST.get('coupon')
