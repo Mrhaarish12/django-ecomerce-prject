@@ -94,6 +94,7 @@ def remove_cart(request, cart_item_uid):
 
 from django.conf import settings
 def cart(request):
+    cart_obj=None
     try:
         pass
     except Exception as e:
