@@ -138,3 +138,7 @@ def remove_coupon(request, cart_id):
     cart.save()
     messages.success(request, 'Coupon Removed.')
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+def success(request):
+    return
