@@ -133,6 +133,7 @@ def cart(request):
         print('************************************')
         print(payment)
         print('************************************')
+        print("")
 
     payment=None
     context = {'cart':cart_obj, 'payment': payment}
